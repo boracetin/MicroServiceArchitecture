@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "TenantService.Persistance": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:61295;http://localhost:61300"
+    }
+  }
+}

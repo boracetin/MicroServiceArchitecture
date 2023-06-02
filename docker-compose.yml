@@ -1,0 +1,94 @@
+version: '3.4'
+networks:
+  microservice:
+   driver: bridge
+
+  
+services:
+  web-apigateway:
+    container_name: web.apigateway
+    image: ${DOCKER_REGISTRY-}webapigateway
+    build:
+      context: .
+      dockerfile: src/ApiGateways/Web.ApiGateway/Dockerfile
+    ports:
+     - "8010:443"
+    networks:
+     - microservice
+
+  editionappDb:
+    container_name: editionappDb
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+     - ACCEPT_EULA=Y
+     - MSSQL_SA_PASSWORD=boracetin123!     
+    ports:
+     - 1433:1433
+    networks:
+     - microservice
+
+
+  editionservice-api:
+    container_name: editionservice.api
+    image: ${DOCKER_REGISTRY-}editionserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/EditionService/EditionService.API/Dockerfile
+    depends_on:
+     - editionappDb
+    networks:
+     - microservice
+ 
+  sessionservice-api:
+    container_name: sessionservice.api
+    image: ${DOCKER_REGISTRY-}sessionserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/SessionService/SessionService.API/Dockerfile
+    networks:
+     - microservice
+    depends_on:
+     - editionappDb
+
+  
+  tenantservice-api:
+    container_name: tenantservice.api
+    image: ${DOCKER_REGISTRY-}tenantserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/TenantService/TenantService.API/Dockerfile
+    depends_on:
+     - editionappDb
+    networks:
+     - microservice
+
+  userservice-api:
+    container_name: userservice.api
+    image: ${DOCKER_REGISTRY-}userserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/UserService/UserService.API/Dockerfile
+    depends_on:
+     - editionappDb
+    networks:
+     - microservice
+  paymentservice-api:
+    container_name: paymentservice.api
+    image: ${DOCKER_REGISTRY-}paymentserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/PaymentService/PaymentService.API/Dockerfile
+    depends_on:
+     - editionappDb
+    networks:
+     - microservice
+  identityservice-api:
+    container_name: identityservice.api
+    image: ${DOCKER_REGISTRY-}identityserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/IdentityService/IdentityService.API/Dockerfile
+    depends_on:
+     - editionappDb
+    networks:
+     - microservice

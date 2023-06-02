@@ -1,0 +1,108 @@
+{
+  "Routes": [
+    //EditionService
+    {
+      "UpstreamPathTemplate": "/api/Edition/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "editionservice.api",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Edition/{everything}",
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    //SessionService
+    {
+      "UpstreamPathTemplate": "/api/Session/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "sessionservice.api",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Session/{everything}",
+      "DangerousAcceptAnyServerCertificateValidator": true
+
+    },
+    //TenantService
+    {
+      "UpstreamPathTemplate": "/api/Tenant/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tenantservice.api",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Tenant/{everything}",
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    //UserService
+    {
+      "UpstreamPathTemplate": "/api/User/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "userservice.api",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/api/User/{everything}",
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    //Localization
+    {
+      "UpstreamPathTemplate": "/api/Localization/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localizationservice.api",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Localization/{everything}",
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    //PaymentService
+    {
+      "UpstreamPathTemplate": "/api/Payment/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "paymentservice.api",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Payment/{everything}",
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    //Identity
+    {
+      "UpstreamPathTemplate": "/api/Authentication/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "identityservice.api",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Authentication/{everything}",
+      "DangerousAcceptAnyServerCertificateValidator": true
+    }
+
+  ]
+}
