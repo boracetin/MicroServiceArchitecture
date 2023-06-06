@@ -78,7 +78,7 @@ services:
     image: ${DOCKER_REGISTRY-}userserviceapi
     build:
       context: .
-      dockerfile: src/Services/TenantService/TenantService.API/Dockerfile
+      dockerfile: src/Services/UserService/UserService.API/Dockerfile
     depends_on:
      - editionappDb
     networks:

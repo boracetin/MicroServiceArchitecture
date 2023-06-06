@@ -10,7 +10,7 @@ using UserService.Application.Features.Users.Dtos;
 using UserService.Application.Services;
 using UserService.Domain;
 
-namespace UserService.Application.Features.Tenants.Commands
+namespace UserService.Application.Features.Users.Commands
 {
     public class CreateUserCommand : IRequest<Unit>
     {

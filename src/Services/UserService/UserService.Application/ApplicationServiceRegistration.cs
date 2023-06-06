@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TenantService.Application
+namespace UserService.Application
 {
     public static class ApplicationServiceRegistration
     {

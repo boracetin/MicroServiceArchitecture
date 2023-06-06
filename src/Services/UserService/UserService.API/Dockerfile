@@ -8,6 +8,17 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
+#CoreUser.Domain
+COPY ["src/Services/UserService/Core.User/CoreUser.Domain/CoreUser.Domain.csproj", "src/Services/UserService/Core.User/"]
+#CoreUser.Persistance
+COPY ["src/Services/UserService/Core.Edition/CoreUser.Persistance/CoreUser.Persistance.csproj", "src/Services/UserService/Core.User/"]
+#UserService.Persistance
+COPY ["src/Services/UserService/UserService.API/UserService.Persistance.csproj", "src/Services/UserService/UserService.Persistance/"]
+#UserService.Domain
+COPY ["src/Services/UserService/UserService.Domain/UserService.Domain.csproj", "src/Services/UserService/UserService.Domain/"]
+#UserService.Application
+COPY ["src/Services/UserService/UserService.API/UserService.Application.csproj", "src/Services/UserService/UserService.Application/"]
+#API
 COPY ["src/Services/UserService/UserService.API/UserService.API.csproj", "src/Services/UserService/UserService.API/"]
 RUN dotnet restore "src/Services/UserService/UserService.API/UserService.API.csproj"
 COPY . .
