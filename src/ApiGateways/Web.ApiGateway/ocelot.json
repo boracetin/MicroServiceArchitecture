@@ -34,6 +34,10 @@
     {
       "UpstreamPathTemplate": "/api/Tenant/{everything}",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      },
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {

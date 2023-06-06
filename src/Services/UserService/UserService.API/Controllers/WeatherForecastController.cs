@@ -1,3 +1,4 @@
+using DotNetCore.CAP;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UserService.API.Controllers
@@ -31,3 +32,4 @@ namespace UserService.API.Controllers
         }
     }
 }
+

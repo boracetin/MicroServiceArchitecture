@@ -1,4 +1,6 @@
-﻿using MediatR;
+﻿using DotNetCore.CAP;
+using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TenantService.Application.Features.Tenants.Commands;
@@ -9,11 +11,14 @@ namespace TenantService.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class TenantController : ControllerBase
     {
+  
         private readonly IMediator _mediator;
         public TenantController(IMediator mediator)
         {
+           
             _mediator = mediator;
         }
         [HttpPost]
@@ -68,5 +73,6 @@ namespace TenantService.API.Controllers
 
             return Ok(await _mediator.Send(query));
         }
+
     }
 }

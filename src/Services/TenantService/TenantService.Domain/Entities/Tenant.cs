@@ -19,8 +19,6 @@ namespace TenantService.Domain.Entities
         public DateTime? SubscriptionEndDay { get; set; }
         public DateTime? SubscriptionStartDay { get; set; }
         public string? EmailAddress { get; set; }
-
-        public byte[] PasswordHash { get; set; }
         public Tenant()
         {
 

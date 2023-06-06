@@ -12,8 +12,8 @@ using TenantService.Persistance.Context;
 namespace TenantService.Persistance.Migrations
 {
     [DbContext(typeof(TenantDbContext))]
-    [Migration("20230529084924_SeedDataAdded")]
-    partial class SeedDataAdded
+    [Migration("20230606090556_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace TenantService.Persistance.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime?>("CreatedTime")
+                    b.Property<DateTime>("CreatedTime")
                         .HasColumnType("datetime2")
                         .HasColumnName("CreatedTime");
 
@@ -42,11 +42,10 @@ namespace TenantService.Persistance.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("DeletedTime");
 
-                    b.Property<int>("EditionId")
+                    b.Property<int?>("EditionId")
                         .HasColumnType("int");
 
                     b.Property<string>("EmailAddress")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("EmailAddress");
 
@@ -59,10 +58,10 @@ namespace TenantService.Persistance.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Name");
 
-                    b.Property<DateTime>("SubscriptionEndDay")
+                    b.Property<DateTime?>("SubscriptionEndDay")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("SubscriptionStartDay")
+                    b.Property<DateTime?>("SubscriptionStartDay")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Surname")
@@ -77,38 +76,50 @@ namespace TenantService.Persistance.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedTime = new DateTime(2023, 5, 29, 11, 49, 24, 745, DateTimeKind.Local).AddTicks(4623),
+                            CreatedTime = new DateTime(2023, 6, 6, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2233),
                             EditionId = 1,
                             EmailAddress = "admin@outlook.com",
                             IsDeleted = false,
                             Name = "admin",
-                            SubscriptionEndDay = new DateTime(2023, 5, 29, 11, 49, 24, 745, DateTimeKind.Local).AddTicks(4599),
-                            SubscriptionStartDay = new DateTime(2023, 6, 8, 11, 49, 24, 745, DateTimeKind.Local).AddTicks(4617),
+                            SubscriptionEndDay = new DateTime(2023, 6, 6, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2209),
+                            SubscriptionStartDay = new DateTime(2023, 6, 16, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2227),
                             Surname = "admin"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedTime = new DateTime(2023, 5, 29, 11, 49, 24, 745, DateTimeKind.Local).AddTicks(4640),
+                            CreatedTime = new DateTime(2023, 6, 6, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2250),
                             EditionId = 2,
                             EmailAddress = "default@outlook.com",
                             IsDeleted = false,
                             Name = "default",
-                            SubscriptionEndDay = new DateTime(2023, 5, 29, 11, 49, 24, 745, DateTimeKind.Local).AddTicks(4638),
-                            SubscriptionStartDay = new DateTime(2023, 6, 8, 11, 49, 24, 745, DateTimeKind.Local).AddTicks(4639),
+                            SubscriptionEndDay = new DateTime(2023, 6, 6, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2248),
+                            SubscriptionStartDay = new DateTime(2023, 6, 16, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2249),
                             Surname = "default"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedTime = new DateTime(2023, 5, 29, 11, 49, 24, 745, DateTimeKind.Local).AddTicks(4643),
+                            CreatedTime = new DateTime(2023, 6, 6, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2253),
                             EditionId = 1,
                             EmailAddress = "default@outlook.com",
                             IsDeleted = false,
                             Name = "bora",
-                            SubscriptionEndDay = new DateTime(2023, 5, 29, 11, 49, 24, 745, DateTimeKind.Local).AddTicks(4642),
-                            SubscriptionStartDay = new DateTime(2023, 6, 8, 11, 49, 24, 745, DateTimeKind.Local).AddTicks(4642),
+                            SubscriptionEndDay = new DateTime(2023, 6, 6, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2251),
+                            SubscriptionStartDay = new DateTime(2023, 6, 16, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2252),
                             Surname = "cetin"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedTime = new DateTime(2023, 6, 6, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2255),
+                            EditionId = 3,
+                            EmailAddress = "pinar@outlook.com",
+                            IsDeleted = true,
+                            Name = "pinar",
+                            SubscriptionEndDay = new DateTime(2023, 6, 6, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2254),
+                            SubscriptionStartDay = new DateTime(2023, 6, 26, 12, 5, 56, 184, DateTimeKind.Local).AddTicks(2255),
+                            Surname = "uyar"
                         });
                 });
 #pragma warning restore 612, 618
