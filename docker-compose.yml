@@ -38,6 +38,17 @@ services:
      - editionappDb
     networks:
      - microservice
+
+  localizationservice-api:
+    container_name: localizationservice.api
+    image: ${DOCKER_REGISTRY-}localizationserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/LocalizationService/LocalizationService.API/Dockerfile
+    depends_on:
+     - editionappDb
+    networks:
+     - microservice
  
   sessionservice-api:
     container_name: sessionservice.api
@@ -67,7 +78,7 @@ services:
     image: ${DOCKER_REGISTRY-}userserviceapi
     build:
       context: .
-      dockerfile: src/Services/UserService/UserService.API/Dockerfile
+      dockerfile: src/Services/TenantService/TenantService.API/Dockerfile
     depends_on:
      - editionappDb
     networks:

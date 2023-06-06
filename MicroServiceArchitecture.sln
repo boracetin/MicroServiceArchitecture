@@ -87,21 +87,33 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentService.Persistance"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.Tenant", "Core.Tenant", "{1D9C1508-B9BC-416A-820D-4E26997CE22B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreTenant.Domain", "src\Services\TenantService\Core.Tenant\CoreTenant.Domain\CoreTenant.Domain.csproj", "{C5B1C71A-FF00-4D1A-9150-D69EE2B16C7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreTenant.Domain", "src\Services\TenantService\Core.Tenant\CoreTenant.Domain\CoreTenant.Domain.csproj", "{C5B1C71A-FF00-4D1A-9150-D69EE2B16C7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreTenant.Persistance", "src\Services\TenantService\Core.Tenant\CoreTenant.Persistance\CoreTenant.Persistance.csproj", "{126806A7-D74A-47DE-8FD7-55A10EEA4966}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreTenant.Persistance", "src\Services\TenantService\Core.Tenant\CoreTenant.Persistance\CoreTenant.Persistance.csproj", "{126806A7-D74A-47DE-8FD7-55A10EEA4966}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.Edition", "Core.Edition", "{BF017403-D49E-49BC-A90C-7B268685DE8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreEdition.Domain", "src\Services\EditionService\Core.Edition\CoreEdition.Domain\CoreEdition.Domain.csproj", "{B290D7F3-32DA-4D4A-AB3B-92541F704F92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreEdition.Domain", "src\Services\EditionService\Core.Edition\CoreEdition.Domain\CoreEdition.Domain.csproj", "{B290D7F3-32DA-4D4A-AB3B-92541F704F92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreEdition.Persistance", "src\Services\EditionService\Core.Edition\CoreEdition.Persistance\CoreEdition.Persistance.csproj", "{37038053-669B-4881-87DB-3727B13C4AF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreEdition.Persistance", "src\Services\EditionService\Core.Edition\CoreEdition.Persistance\CoreEdition.Persistance.csproj", "{37038053-669B-4881-87DB-3727B13C4AF2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.Payment", "Core.Payment", "{C4605EDA-E4CB-42BD-AB3D-9C1AEF608D24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorePayment.Domain", "src\Services\PaymentService\Core.Payment\CorePayment.Domain\CorePayment.Domain.csproj", "{6A055ED5-9E0A-4493-BE14-F246645C0623}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorePayment.Domain", "src\Services\PaymentService\Core.Payment\CorePayment.Domain\CorePayment.Domain.csproj", "{6A055ED5-9E0A-4493-BE14-F246645C0623}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorePayment.Persistance", "src\Services\PaymentService\Core.Payment\CorePayment.Persistance\CorePayment.Persistance.csproj", "{3F417D1E-233D-4539-A0A0-5588DBD01612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorePayment.Persistance", "src\Services\PaymentService\Core.Payment\CorePayment.Persistance\CorePayment.Persistance.csproj", "{3F417D1E-233D-4539-A0A0-5588DBD01612}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core.User", "Core.User", "{CD953E2C-C673-479C-9D6A-76A7F4D5299D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Domain", "src\Services\UserService\UserService.Domain\UserService.Domain.csproj", "{29287D17-913E-44F9-A881-F1F3D8ED05F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Application", "src\Services\UserService\UserService.Application\UserService.Application.csproj", "{83AEA8C6-F079-4FF3-B4F2-A874F7A7CD66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserService.Persistance", "src\Services\UserService\UserService.Persistance\UserService.Persistance.csproj", "{EF9463B4-CFE8-4001-A220-6C5967DA7E03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreUser.Domain", "src\Services\UserService\Core.User\CoreUser.Domain\CoreUser.Domain.csproj", "{12A23014-BFAE-4CD8-87D9-E54328DAACD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreUser.Persistance", "src\Services\UserService\Core.User\CoreUser.Persistance\CoreUser.Persistance.csproj", "{25EA1BDD-3032-4250-AD08-D141428384B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -213,6 +225,26 @@ Global
 		{3F417D1E-233D-4539-A0A0-5588DBD01612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F417D1E-233D-4539-A0A0-5588DBD01612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F417D1E-233D-4539-A0A0-5588DBD01612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29287D17-913E-44F9-A881-F1F3D8ED05F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29287D17-913E-44F9-A881-F1F3D8ED05F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29287D17-913E-44F9-A881-F1F3D8ED05F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29287D17-913E-44F9-A881-F1F3D8ED05F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83AEA8C6-F079-4FF3-B4F2-A874F7A7CD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83AEA8C6-F079-4FF3-B4F2-A874F7A7CD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83AEA8C6-F079-4FF3-B4F2-A874F7A7CD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83AEA8C6-F079-4FF3-B4F2-A874F7A7CD66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9463B4-CFE8-4001-A220-6C5967DA7E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9463B4-CFE8-4001-A220-6C5967DA7E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9463B4-CFE8-4001-A220-6C5967DA7E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9463B4-CFE8-4001-A220-6C5967DA7E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12A23014-BFAE-4CD8-87D9-E54328DAACD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12A23014-BFAE-4CD8-87D9-E54328DAACD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12A23014-BFAE-4CD8-87D9-E54328DAACD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12A23014-BFAE-4CD8-87D9-E54328DAACD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25EA1BDD-3032-4250-AD08-D141428384B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25EA1BDD-3032-4250-AD08-D141428384B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25EA1BDD-3032-4250-AD08-D141428384B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25EA1BDD-3032-4250-AD08-D141428384B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -265,6 +297,12 @@ Global
 		{C4605EDA-E4CB-42BD-AB3D-9C1AEF608D24} = {813140BD-75E1-44BC-9DB7-339897683867}
 		{6A055ED5-9E0A-4493-BE14-F246645C0623} = {C4605EDA-E4CB-42BD-AB3D-9C1AEF608D24}
 		{3F417D1E-233D-4539-A0A0-5588DBD01612} = {C4605EDA-E4CB-42BD-AB3D-9C1AEF608D24}
+		{CD953E2C-C673-479C-9D6A-76A7F4D5299D} = {282FE73B-0065-402D-9413-07B5734AD77B}
+		{29287D17-913E-44F9-A881-F1F3D8ED05F4} = {282FE73B-0065-402D-9413-07B5734AD77B}
+		{83AEA8C6-F079-4FF3-B4F2-A874F7A7CD66} = {282FE73B-0065-402D-9413-07B5734AD77B}
+		{EF9463B4-CFE8-4001-A220-6C5967DA7E03} = {282FE73B-0065-402D-9413-07B5734AD77B}
+		{12A23014-BFAE-4CD8-87D9-E54328DAACD9} = {CD953E2C-C673-479C-9D6A-76A7F4D5299D}
+		{25EA1BDD-3032-4250-AD08-D141428384B9} = {CD953E2C-C673-479C-9D6A-76A7F4D5299D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C984A8B-1A6C-4488-B9CF-D39DDA42A73C}
