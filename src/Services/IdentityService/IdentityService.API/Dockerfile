@@ -7,7 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
+
+#IdentityService.Persistance
+COPY ["src/Services/IdentityService/IdentityService.API/IdentityService.Persistance.csproj", "src/Services/IdentityService/IdentityService.Persistance/"]
+#IdentityService.Domain
+COPY ["src/Services/IdentityService/IdentityService.Domain/IdentityService.Domain.csproj", "src/Services/IdentityService/IdentityService.Domain/"]
+#IdentityService.Application
+COPY ["src/Services/IdentityService/IdentityService.API/IdentityService.Application.csproj", "src/Services/IdentityService/IdentityService.Application/"]
+#API
 COPY ["src/Services/IdentityService/IdentityService.API/IdentityService.API.csproj", "src/Services/IdentityService/IdentityService.API/"]
+
 RUN dotnet restore "src/Services/IdentityService/IdentityService.API/IdentityService.API.csproj"
 COPY . .
 WORKDIR "/src/src/Services/IdentityService/IdentityService.API"
