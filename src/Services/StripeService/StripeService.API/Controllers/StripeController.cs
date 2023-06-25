@@ -15,16 +15,23 @@ namespace StripeService.API.Controllers
     public class StripeController : ControllerBase
     {
         private readonly IConfiguration _configuration;
-
-        private static string s_wasmClientURL = string.Empty;
-
         public StripeController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
+        [HttpGet]
+        [Route("GetConfiguration")]
+        public StripeConfigurationDto GetConfiguration()
+        {
+            return new StripeConfigurationDto
+            {
+                PublishableKey = _configuration["Stripe:PublishableKey"]
+            };
+        }
 
         [HttpPost]
-        public async Task<ActionResult<string>> CreatePayment(StripeCreatePaymentInput input)
+        [Route("CreatePayment")]
+        public async Task<ActionResult<string>> CreatePayment()
         {
             var options = new SessionCreateOptions
             {
@@ -51,7 +58,9 @@ namespace StripeService.API.Controllers
                     "card"
                 },
 
-                SuccessUrl = "" // uygulama ok olduktan sonrakı yonlenecegı sayfayı yaz bu olmadan calısmıyor deneme yapamadım 
+                SuccessUrl = "http://localhost:3000/account/stripe-success", // uygulama ok olduktan sonrakı yonlenecegı sayfayı yaz bu olmadan calısmıyor deneme yapamadım 
+                CancelUrl = "http://localhost:3000/account/stripe-cancel" // uygulama ok olduktan sonrakı yonlenecegı sayfayı yaz bu olmadan calısmıyor deneme yapamadım 
+
 
             };
             options.Mode = "payment";

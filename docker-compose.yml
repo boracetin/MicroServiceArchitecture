@@ -104,6 +104,17 @@ services:
     networks:
      - microservice
 
+  stripeservice-api:
+    container_name: stripeservice.api
+    image: ${DOCKER_REGISTRY-}stripeserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/StripeService/StripeService.API/Dockerfile
+    depends_on:
+     - editionappDb
+    networks:
+     - microservice
+
   rabbitmq:
     image: rabbitmq:management
     container_name: rabbitmq
