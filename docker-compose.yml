@@ -115,6 +115,18 @@ services:
     networks:
      - microservice
 
+  smtp:
+    image: namshi/smtp
+    container_name: smtp_relay
+    restart: always
+    ports:
+     - "25:25"
+    environment:
+      RELAY_HOST: smtp.example.com
+      RELAY_PORT: 587
+      RELAY_USERNAME: alice@example.com
+      RELAY_PASSWORD: secretpassword
+
   rabbitmq:
     image: rabbitmq:management
     container_name: rabbitmq
