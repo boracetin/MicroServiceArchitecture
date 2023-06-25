@@ -17,9 +17,9 @@ namespace SmtpMailService.Api.Controllers
 
         [HttpPost]
         [Route("SendMail")]
-        public async bool SendMail(MailData mailData)
+        public  ActionResult<bool> SendMail(MailData mailData)
         {
-            return await _mailService.SendEmailAsync(mailData);
+            return Ok(_mailService.SendEmailAsync(mailData));
         }
     }
 }
