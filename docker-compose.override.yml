@@ -89,14 +89,14 @@ services:
       - ${APPDATA}/Microsoft/TenantSecrets:/root/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
 
-  smtp:
-    image: namshi/smtp
-    container_name: smtp_relay
-    restart: always
-    ports:
-     - "25:25"
+  smtpmailservice-api:
     environment:
-      RELAY_HOST: smtp.example.com
-      RELAY_PORT: 587
-      RELAY_USERNAME: alice@example.com
-      RELAY_PASSWORD: secretpassword
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - ${APPDATA}/Microsoft/TenantSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
