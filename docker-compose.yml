@@ -115,7 +115,18 @@ services:
     networks:
      - microservice
 
-  smtp:
+  smtpmailservice-api:
+    container_name: smtpmailservice.api
+    image: ${DOCKER_REGISTRY-}smtpmailservice
+    build:
+      context: .
+      dockerfile: src/Services/SmtpMailService/SmtpMailService.API/Dockerfile
+    depends_on:
+     - smtp_relay
+    networks:
+     - microservice
+
+  smtp_relay:
     image: namshi/smtp
     container_name: smtp_relay
     restart: always

@@ -106,7 +106,7 @@
       ],
       "DownstreamPathTemplate": "/api/Authentication/{everything}",
       "DangerousAcceptAnyServerCertificateValidator": true
-    }, 
+    },
     //Stripe
     {
       "UpstreamPathTemplate": "/api/Stripe/{everything}",
@@ -120,6 +120,21 @@
         }
       ],
       "DownstreamPathTemplate": "/api/Stripe/{everything}",
+      "DangerousAcceptAnyServerCertificateValidator": true
+    }, 
+    //Smtp Server
+    {
+      "UpstreamPathTemplate": "/api/Mail/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "smtpmailservice.api",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Mail/{everything}",
       "DangerousAcceptAnyServerCertificateValidator": true
     }
 
