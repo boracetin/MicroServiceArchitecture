@@ -51,21 +51,21 @@ namespace IdentityService.Persistance.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2053bf62-57ee-4404-a6d5-f3b86a5e40c4",
+                            Id = "206c8824-fbce-4266-90bb-d42ecbcaf545",
                             ConcurrencyStamp = "1",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
-                            Id = "3b4901d1-9e75-4be2-93c1-b597b7c4ee32",
+                            Id = "b4aadf12-254d-44a0-aa3b-11120388081e",
                             ConcurrencyStamp = "2",
                             Name = "User",
                             NormalizedName = "User"
                         },
                         new
                         {
-                            Id = "c687f1a9-b366-4aeb-8fef-36ecd433913c",
+                            Id = "4c92f2e0-c0bc-418d-86e6-132bb8699e18",
                             ConcurrencyStamp = "3",
                             Name = "HR",
                             NormalizedName = "HR"

@@ -1,8 +1,10 @@
 ﻿using IdentityService.Application.Identity.Dtos;
+using MassTransit;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Shared.MassTransmitMessages;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -19,14 +21,15 @@ namespace IdentityService.Application.Identity.Commands
 
         public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginOutputDto>
         {
+            private readonly ISendEndpointProvider _sendEndpointProvider;
             private readonly UserManager<IdentityUser> _userManager;
             private readonly IConfiguration _configuration;
 
-            public LoginCommandHandler(UserManager<IdentityUser> userManager, IConfiguration configuration)
+            public LoginCommandHandler(UserManager<IdentityUser> userManager, IConfiguration configuration, ISendEndpointProvider sendEndpointProvider)
             {
                 _userManager = userManager;
                 _configuration = configuration;
-
+                _sendEndpointProvider= sendEndpointProvider;
             }
             public async Task<LoginOutputDto> Handle(LoginCommand request, CancellationToken cancellationToken)
             {
@@ -48,6 +51,16 @@ namespace IdentityService.Application.Identity.Commands
 
                     var jwtToken = GetToken(authClaims);
 
+
+                    var sendEndpoint = await _sendEndpointProvider.GetSendEndpoint(new Uri("queue:input-queue"));
+
+                    var tenantLoginMessageCommand = new TenantLoginMessageCommand();
+
+                    tenantLoginMessageCommand.Username = request.Input.Username;
+                    tenantLoginMessageCommand.Password= request.Input.Password;
+
+                    await sendEndpoint.Send(tenantLoginMessageCommand); 
+
                     return (new LoginOutputDto()
                     {
                         Token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
@@ -56,6 +69,9 @@ namespace IdentityService.Application.Identity.Commands
                     //returning the token...
 
                 }
+
+
+
                 return (new LoginOutputDto()
                 {
                     Token = null,

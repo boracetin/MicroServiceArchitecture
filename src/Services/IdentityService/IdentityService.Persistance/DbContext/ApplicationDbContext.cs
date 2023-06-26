@@ -24,7 +24,8 @@ namespace IdentityService.Persistance.DbContext
         {
             if (!optionsBuilder.IsConfigured)
                 base.OnConfiguring(
-                    optionsBuilder.UseSqlServer("Data Source=host.docker.internal,1433; Initial Catalog=MicroServiceTestDb; Persist Security Info=True; User ID=sa; Password=boracetin123!; TrustServerCertificate=True; MultipleActiveResultSets=True"));
+                    optionsBuilder.UseSqlServer("Data Source=localhost,1433; Initial Catalog=MicroServiceTestDb; User ID=sa; Password=boracetin123!; TrustServerCertificate=True; MultipleActiveResultSets=True"
+          ));
 
         }
         protected override void OnModelCreating(ModelBuilder builder)

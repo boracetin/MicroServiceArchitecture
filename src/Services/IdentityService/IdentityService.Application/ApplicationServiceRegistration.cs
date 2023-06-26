@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using MassTransit;
 using System.Threading.Tasks;
 
 namespace IdentityService.Application
@@ -34,6 +35,25 @@ namespace IdentityService.Application
                 };
             });
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+
+            var a = configuration["RabbitMQUrl"];
+
+            services.AddMassTransit(x =>
+            {
+
+                //Default Port: 5672
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.Host("", host =>
+                    {
+                        host.Username("");
+                        host.Password("");
+                    });
+                });
+            });
+
+            services.AddMassTransitHostedService();
+
             return services;
         }
     }
