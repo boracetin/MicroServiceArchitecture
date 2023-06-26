@@ -148,8 +148,19 @@ services:
       - "5672:5672"
       - "15672:15672"
 
+  elasticservice-api:
+    container_name: elasticservice.api
+    image: ${DOCKER_REGISTRY-}elasticserviceapi
+    build:
+      context: .
+      dockerfile: src/Services/ElasticService/ElasticSearch/ElasticSearch.API/Dockerfile
+    depends_on:
+     - elasticsearch
+    networks:
+     - microservice
 
   elasticsearch:
+    container_name: elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:6.0.1
     volumes:
       - ./src/Services/ElasticService/ElasticSearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml

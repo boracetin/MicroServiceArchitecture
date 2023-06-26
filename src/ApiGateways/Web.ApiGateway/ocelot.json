@@ -121,8 +121,8 @@
       ],
       "DownstreamPathTemplate": "/api/Stripe/{everything}",
       "DangerousAcceptAnyServerCertificateValidator": true
-    }, 
-    //Smtp Server
+    },
+    //MailService
     {
       "UpstreamPathTemplate": "/api/Mail/{everything}",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
@@ -135,6 +135,21 @@
         }
       ],
       "DownstreamPathTemplate": "/api/Mail/{everything}",
+      "DangerousAcceptAnyServerCertificateValidator": true
+    },
+    //ElasticService
+    {
+      "UpstreamPathTemplate": "/api/ElasticService/{everything}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "elasticservice.api",
+          "Port": 443
+        }
+      ],
+      "DownstreamPathTemplate": "/api/ElasticService/{everything}",
       "DangerousAcceptAnyServerCertificateValidator": true
     }
 
