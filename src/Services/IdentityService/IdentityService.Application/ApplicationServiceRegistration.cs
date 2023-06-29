@@ -44,10 +44,10 @@ namespace IdentityService.Application
                 //Default Port: 5672
                 x.UsingRabbitMq((context, cfg) =>
                 {
-                    cfg.Host("", host =>
+                    cfg.Host("rabbitmq","/", host =>
                     {
-                        host.Username("");
-                        host.Password("");
+                        host.Username("guest");
+                        host.Password("guest");
                     });
                 });
             });

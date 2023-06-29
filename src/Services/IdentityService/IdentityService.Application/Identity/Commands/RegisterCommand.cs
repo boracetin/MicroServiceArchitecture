@@ -59,9 +59,6 @@ namespace IdentityService.Application.Identity.Commands
                         Result = "User Succesfully registered"
                     };
                 }
-
-
-
                 return new RegisterOutputDto()
                 {
                     Result = "User Succesfully registered"

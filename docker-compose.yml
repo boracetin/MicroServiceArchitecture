@@ -147,6 +147,8 @@ services:
     ports:
       - "5672:5672"
       - "15672:15672"
+    networks:
+     - microservice
 
   elasticservice-api:
     container_name: elasticservice.api
